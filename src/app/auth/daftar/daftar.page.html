@@ -1,0 +1,76 @@
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="regis(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <img src="../../assets/icon2.png">
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="text" type="text" placeholder="Nama Lengkap" ngModel required></ion-input>
+            </ion-item>
+			<ion-item>
+    			<ion-label>Jenis Kelamin</ion-label>
+    			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali">
+      				<ion-select-option value="f">Perempuan</ion-select-option>
+      				<ion-select-option value="m">Laki-Laki</ion-select-option>
+    			</ion-select>
+  			</ion-item>
+            <ion-item>
+              <ion-input name="NIK" type="number" placeholder="Nomor Identitas (NIK)" ngModel required></ion-input>
+            </ion-item>
+           <ion-item>
+    			<ion-label>Status Perkawinan</ion-label>
+    			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali">
+      				<ion-select-option value="m">Menikah</ion-select-option>
+      				<ion-select-option value="m">Belum Menikah</ion-select-option>
+      				<ion-select-option value="m">Duda/Janda</ion-select-option>
+    			</ion-select>
+  			</ion-item>
+          <ion-item>
+    			<ion-label>Pekerjaan</ion-label>
+    			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali">
+      				<ion-select-option value="m">PNS</ion-select-option>
+      				<ion-select-option value="m">Mahasiswa</ion-select-option>
+      				<ion-select-option value="m">Lain-lain</ion-select-option>
+    			</ion-select>
+  			</ion-item>
+           <ion-item>
+    			<ion-label>Provinsi</ion-label>
+    			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali">
+      				<ion-select-option value="m">Sulawesi Tenggara</ion-select-option>
+      				<ion-select-option value="m">Daerah Istimewa Yogyakarta</ion-select-option>
+      				<ion-select-option value="m">Jakarta</ion-select-option>
+    			</ion-select>
+  			</ion-item>
+            <ion-item>
+    			<ion-label>Kabupaten/Kota</ion-label>
+    			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali"> 
+      				<ion-select-option value="m">Gunung Kidul</ion-select-option>
+      				<ion-select-option value="m">Bantul</ion-select-option>
+      				<ion-select-option value="m">Sleman</ion-select-option>
+    			</ion-select>
+    		</ion-item>
+            <ion-item>
+              <ion-input name="alamat" type="text" placeholder="Alamat" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="nohp" type="text" placeholder="No.Telp/HP" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="sandi" type="password" placeholder="Kata sandi" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div text-center padding>
+            <ion-button size="medium" type="submit" [disabled]="form.invalid" routerLink='/masuk'>Daftar</ion-button>
+             <ion-button color="danger" size="medium" routerLink='/masuk'>Kembali</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

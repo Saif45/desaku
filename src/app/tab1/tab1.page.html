@@ -1,17 +1,90 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+  <ion-toolbar class="tabs-color">
+    <ion-title *ngIf="!isSearchbarOpened">
+     <a routerLink="/tabs"> <img src="../../assets/mini.png"> </a>
+   </ion-title>
+   <ion-buttons slot="end">
+    <ion-icon name="search" size="medium" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
+  </ion-buttons>
+  <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+
+</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item-divider>
+    <ion-text>
+     Dokumentasi desa
+   </ion-text>
+ </ion-item-divider>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+ <div class="headline">
+  <ion-list no-lines>
+    <ion-item>
+      <ion-slides autoplay="2500" loop="true" pager color="secondary">
+        <ion-slide>
+          <ion-card>
+            <img src="../../assets/desa1.jpg" />
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <img src="../../assets/desa2.jpg" />
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <img src="../../assets/desa3.jpg" />
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-item>
+  </ion-list>
+</div>
+
+<!-- Item Dividers in a List -->
+<ion-list>
+  <ion-item-divider>
+    <ion-label>
+      Berita Terbaru
+    </ion-label>
+  </ion-item-divider>
+  <ion-card>
+     <ion-thumbnail item-left>
+      <img src="../../assets/desa1.jpg">
+    </ion-thumbnail>
+    <ion-card-header class="judul">
+      Pemilihan PILKADA 2020 Ditunda sampai tanggal 12 Agustus 2020
+    </ion-card-header>
+    <ion-card-content>
+      Dikarenakan adanya covid-19 pelaksanaan pemilihan kepala desa patemon ditunda hingga waktu yang telah ditentukan..
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header class="judul">
+      Pemilihan PILKADA 2020 Ditunda sampai tanggal 12 Agustus 2020
+    </ion-card-header>
+    <ion-card-content>
+      <h9>Dikarenakan adanya covid-19 pelaksanaan pemilihan kepala desa patemon ditunda hingga waktu yang telah ditentukan..</h9>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header class="judul">
+      Pemilihan PILKADA 2020 Ditunda sampai tanggal 12 Agustus 2020
+    </ion-card-header>
+    <ion-card-content>
+      Dikarenakan adanya covid-19 pelaksanaan pemilihan kepala desa patemon ditunda hingga waktu yang telah ditentukan..
+    </ion-card-content>
+  </ion-card>
+
+</ion-list>
+<!-- fab placed to the bottom end -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button class="tabs-color">
+    <ion-icon name="chatbubbles"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 </ion-content>
+
+

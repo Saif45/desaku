@@ -1,0 +1,39 @@
+ion-content {
+    --background:url(../../assets/backgroung.jpg) no-repeat repeat center / cover;
+}
+.head {
+    margin: 0 auto;
+    position: relative;
+    top: 27%;
+    left: 4%;
+}
+.button {
+    height: 50px;
+    width: 200px;
+    color: black;
+}
+div.head {
+    margin-top: 3em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+div.button {
+    margin-top: 5em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+// .section.2 {
+//     margin-top: 22em;
+//     margin-left: 5em;
+//     margin-right: 5em;
+// }
+// section.3 {
+//     margin-top: 26em;
+//     margin-left: 5em;
+//     margin-right: 5em;
+// }
+// section:not(.full-width),
+//   .full-width > header {
+//     padding: 0 10px;
+//   }

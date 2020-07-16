@@ -1,17 +1,18 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
+  <ion-toolbar class="tabs-color">
+    <ion-title *ngIf="!isSearchbarOpened">
+       <a routerLink="/tabs"> <img src="../../assets/mini.png"> </a>
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="search" size="medium" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
+    </ion-buttons>
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+        
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-list>
 </ion-content>
+
+

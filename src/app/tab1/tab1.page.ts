@@ -6,7 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  
+  public isSearchOpened = false;
   constructor() {}
+
+ onSearch(event){
+ console.log(event.target.value);
+ }
+
+
+ slideOpt ={
+    direction: 'horizontal',
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+    }
+  }
 
 }

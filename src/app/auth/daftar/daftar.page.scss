@@ -1,0 +1,26 @@
+
+ion-content > ion-list{
+	position: relative;
+	top: 45%;
+}
+ion-item{
+    --color: #759e33ff;
+}
+ion-button{
+    --background: #759e33ff;
+}
+
+p{
+	--color: #759e33ff;
+}
+
+/* Set the text color */
+ion-select::part(text) {
+  color: #759e33ff;
+ }
+ 
+/* Set the icon color and opacity */
+ion-select::part(icon) {
+  color: #759e33ff;
+  opacity: 1;
+}

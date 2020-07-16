@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  public isSearchOpened = false;
   constructor() {}
+
+ onSearch(event){
+ console.log(event.target.value);
+ }
+
+ slideOpt ={
+    direction: 'horizontal',
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+    }
+  }
 
 }

@@ -1,0 +1,48 @@
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <img src="../../assets/icon2.png">
+          </div>
+                     <ion-row>
+          <div text-center>
+        <ion-text> Silahkan masukkan email atau nomor handphone anda yang terdaftar.Kode untuk mengatur ulang kata sandi akan kami kirimkan via email/nomor handphone</ion-text>
+          </div>
+      </ion-row>
+          <div padding>
+            <ion-item>
+              <ion-input name="text" type="text" placeholder="Email/No handphone" ngModel required></ion-input>
+            </ion-item>
+          </div>
+           <div padding>
+            <ion-button size="medium" type="submit" [disabled]="form.invalid" expand="block" routerLink='/verif'>Kirim Kode Verifikasi</ion-button>
+          </div>
+            <div class="mbsc-btn-group-block">
+                <ion-button (click)="popup.instance.show()" size="medium" type="submit" [disabled]="form.invalid" expand="block">Kirim kode Verifikasi</ion-button>
+            </div>
+         <ion-row>
+          <div text-center>
+       <ion-text routerLink='/masuk'> < Kembali ke login  </ion-text>
+          </div>
+      </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+ 
+    
+    <mbsc-popup [options]="settings" #popup="mobiscroll">
+        <div class="mbsc-align-center mbsc-padding">
+            <img src="../../assets/centang.png">
+            <h3></h3>
+            <ion-text>Masukkan kode verifikasi</ion-text>
+            <div padding>
+            <ion-item>
+              <ion-input name="text" type="text" placeholder="Kode Verifikasi" ngModel required></ion-input>
+            </ion-item>
+          </div>
+        </div>
+    </mbsc-popup>
+</ion-content>

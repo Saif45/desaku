@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+ public isSearchOpened = false;
   constructor() {}
+
+ onSearch(event){
+ console.log(event.target.value);
+ }
 
 }

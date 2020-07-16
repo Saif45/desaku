@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lupasandi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-content>
+    <mbsc-form>
+        <mbsc-form-group>
+            <mbsc-form-group-title>Without return value</mbsc-form-group-title>
+            <div class="mbsc-btn-group-block">
+                <mbsc-button (click)="popup.instance.show()">Show Popup</mbsc-button>
+            </div>
+        </mbsc-form-group>
+        <mbsc-form-group>
+            <mbsc-form-group-title>With return value</mbsc-form-group-title>
+            <label> Update
+                <input (click)="list.instance.show()" [ngModel]="checked" placeholder="Please Select..." readonly />
+            </label>
+        </mbsc-form-group>
+        <mbsc-form-group>
+            <mbsc-form-group-title>With scrollable content</mbsc-form-group-title>
+            <div class="mbsc-btn-group-block">
+                <mbsc-button (click)="scrollable.instance.show()">Show Popup</mbsc-button>
+            </div>
+        </mbsc-form-group>
+    </mbsc-form>
+    
+    <mbsc-popup [options]="settings" #popup="mobiscroll">
+        <div class="mbsc-align-center mbsc-padding">
+            <img src="//demo.mobiscroll.comhttps://img.mobiscroll.com/demos/f1.png">
+            <h3>Liza Taylor</h3>
+            <p>liza.taylor@mobiscroll.com <br> (202) 555-0127</p>
+        </div>
+    </mbsc-popup>
+    
+    <mbsc-popup [options]="listSettings" #list="mobiscroll">
+        <mbsc-form>
+            <mbsc-form-group inset>
+                <p>Some updates are available for you. <br> When would you like to install them?</p>
+            </mbsc-form-group>
+            <mbsc-form-group inset>
+                <mbsc-radio-group [(ngModel)]="update" name="update">
+                    <mbsc-radio value="Right now">Right now</mbsc-radio>
+                    <mbsc-radio value="Later on today">Later on today</mbsc-radio>
+                    <mbsc-radio value="Remind me later">Remind me later</mbsc-radio>
+                </mbsc-radio-group>
+            </mbsc-form-group>
+        </mbsc-form>
+    </mbsc-popup>
+    
+    <mbsc-popup [options]="scrollableSettings" #scrollable="mobiscroll">
+        <mbsc-listview [options]="lvSettings">
+            <mbsc-listview-item *ngFor="let item of options" [icon]="item.icon" (click)="scrollable.instance.hide()">
+                {{ item.text }}
+            </mbsc-listview-item>
+        </mbsc-listview>
+    </mbsc-popup>
+</ion-content>
+</ion-content>

@@ -1,17 +1,100 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+  <ion-toolbar class="tabs-color">
+    <ion-title *ngIf="!isSearchbarOpened">
+     <a routerLink="/tabs"> <img src="../../assets/mini.png"> </a>
+   </ion-title>
+   <ion-buttons slot="end">
+    <ion-icon name="search" size="medium" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
+  </ion-buttons>
+  <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+
+</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <div>
+   <ion-item-divider>
+    <ion-text>
+     Pengumuman Terbaru
+   </ion-text>
+ </ion-item-divider> 
+ <ion-slides autoplay="2500" loop="true" pager color="secondary">
+  <!-- Slide 1 -->
+  <ion-slide >
+    <ion-card>
+      <img src="../../assets/desa1.jpg"> <br>
+      <ion-card-content>
+        Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <!-- Slide 2 -->
+  <ion-slide>
+   <ion-card>
+    <img src="../../assets/desa3.jpg"> <br>
+    <ion-card-content>
+      Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
+    </ion-card-content>
+  </ion-card>
+</ion-slide>
+<ion-slide>
+ <ion-card>
+  <img src="../../assets/desa3.jpg"> <br>
+  <ion-card-content>
+    Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
+  </ion-card-content>
+</ion-card>
+</ion-slide>
+</ion-slides>
+</div>
+<ion-list>
+  <ion-item-divider>
+    <ion-label>
+      Pengumuman Lainnya
+    </ion-label>
+  </ion-item-divider>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="../../assets/desa1.jpg"> <br>
+      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="../../assets/desa2.jpg"> <br>
+      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="../../assets/desa3.jpg"> <br>
+      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+    </ion-card-content>
+  </ion-card>
+
+</ion-list>
+
+<!-- fab placed to the bottom end -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button class="tabs-color">
+    <ion-icon name="chatbubbles"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 </ion-content>
+
+

@@ -1,6 +1,8 @@
 {
   "name": "Desaku",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "551da631"
 }
