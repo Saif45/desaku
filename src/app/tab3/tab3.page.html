@@ -1,18 +1,57 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="tabs-color">
-    <ion-title *ngIf="!isSearchbarOpened">
-       <a routerLink="/tabs"> <img src="../../assets/mini.png"> </a>
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-icon name="search" size="medium" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
-    </ion-buttons>
-    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
-        
-  </ion-toolbar>
+	<ion-toolbar class="tabs-color">
+<ion-title class="ion-text-center">Pengaturan</ion-title>
+
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-</ion-list>
+	<!-- Default Toggle -->
+
+	<!-- Toggles in a List -->
+	<ion-list>
+		<ion-item>
+			<ion-icon slot="start" name="notifications"></ion-icon>
+			<ion-label>Notifikasi</ion-label>
+			<ion-toggle></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon slot="start" name="image"></ion-icon>
+			<ion-label>Kualitas Gambar HD</ion-label>
+			<ion-toggle></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon slot="start" name="sunny"></ion-icon>
+			<ion-label>Mode Gelap</ion-label>
+			<ion-toggle></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Ukuran Huruf</ion-label>
+			<ion-select placeholder="Pilih" okText="Selesai" cancelText="Kembali">
+				<ion-select-option value="f">Besar</ion-select-option>
+				<ion-select-option value="m">Kecil</ion-select-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item href="https://patemon.kec-gombong.kebumenkab.go.id/index.php/web/artikel/7/29">
+			<ion-icon slot="start" name="help-circle-outline"></ion-icon>
+			<ion-label>Pusat Bantuan</ion-label>
+		</ion-item>
+
+		<ion-item routerLink="/info">
+			<ion-icon slot="start" name="information-circle-outline"></ion-icon>
+			<ion-label>Info Aplikasi</ion-label>
+		</ion-item>
+
+		<ion-item routerLink="/masuk">
+			<ion-icon slot="start" name="log-out-outline"></ion-icon>
+			<ion-label>Keluar</ion-label>
+		</ion-item>
+	</ion-list>
+
 </ion-content>
 
 

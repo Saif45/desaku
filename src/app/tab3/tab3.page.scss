@@ -1,3 +1,15 @@
 .tabs-color {
   --background: #759e33ff;
 }
+
+ion-toggle {
+  --background-checked:  #759e33ff;
+
+  --handle-background:  white;
+  --handle-background-checked:  white;
+}
+
+ion-title{
+	--color: white;
+	--align: center;
+}

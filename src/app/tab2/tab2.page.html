@@ -4,7 +4,7 @@
      <a routerLink="/tabs"> <img src="../../assets/mini.png"> </a>
    </ion-title>
    <ion-buttons slot="end">
-    <ion-icon name="search" size="medium" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
+    <ion-icon name="search" size="big" color="light" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"></ion-icon>
   </ion-buttons>
   <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
 
@@ -17,72 +17,58 @@
   <div>
    <ion-item-divider>
     <ion-text>
-     Pengumuman Terbaru
+    Kategori
    </ion-text>
  </ion-item-divider> 
- <ion-slides autoplay="2500" loop="true" pager color="secondary">
-  <!-- Slide 1 -->
-  <ion-slide >
-    <ion-card>
-      <img src="../../assets/desa1.jpg"> <br>
-      <ion-card-content>
-        Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
-      </ion-card-content>
-    </ion-card>
-  </ion-slide>
-  <!-- Slide 2 -->
-  <ion-slide>
-   <ion-card>
-    <img src="../../assets/desa3.jpg"> <br>
-    <ion-card-content>
-      Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
-    </ion-card-content>
-  </ion-card>
-</ion-slide>
-<ion-slide>
- <ion-card>
-  <img src="../../assets/desa3.jpg"> <br>
-  <ion-card-content>
-    Mulai Minggu Depan Warga Desa Patemon Wajib Menggunakan Baju Lengan Panjang dan Masker....
-  </ion-card-content>
-</ion-card>
-</ion-slide>
-</ion-slides>
-</div>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <ion-badge color="light">Terbaru</ion-badge>
+        </ion-col>
+        <ion-col size="3">
+          <ion-badge color="light">APBD</ion-badge>
+        </ion-col>
+        <ion-col size="3">
+          <ion-badge color="light">Donasi</ion-badge>
+        </ion-col>
+        <ion-col size="3">
+          <ion-badge color="light">Bantuan</ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
 <ion-list>
-  <ion-item-divider>
-    <ion-label>
-      Pengumuman Lainnya
-    </ion-label>
-  </ion-item-divider>
-  <ion-card>
+  <ion-card routerLink="/detail-berita">
+    <img src="../../assets/desa1.jpg"> <br>
     <ion-card-header>
-      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
-      <ion-card-title></ion-card-title>
+      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle><br>
+      <h3>PILKADA 2020</h3>
     </ion-card-header>
     <ion-card-content>
-      <img src="../../assets/desa1.jpg"> <br>
-      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+      <h5>Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu...</h5>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card routerLink="/detail-berita">
+    <img src="../../assets/desa2.jpg"> <br>
     <ion-card-header>
-      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
-      <ion-card-title></ion-card-title>
+      <ion-card-subtitle>Kategori : COVID-19</ion-card-subtitle>
+      <h3>COVID-19</h3>
     </ion-card-header>
     <ion-card-content>
-      <img src="../../assets/desa2.jpg"> <br>
-      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+      <h5>Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu...</h5>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card routerLink="/detail-berita">
+    <img src="../../assets/desa3.jpg"> <br>
     <ion-card-header>
-      <ion-card-subtitle>Kategori : PILKADA</ion-card-subtitle>
-      <ion-card-title></ion-card-title>
+      <ion-card-subtitle>Kategori : APBD</ion-card-subtitle>
+      <h3>Dana APBD Penyaluran</h3>
     </ion-card-header>
     <ion-card-content>
-      <img src="../../assets/desa3.jpg"> <br>
-      Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu....
+      <h5>Pelaksanaan PILKADA Tahun 2020 berolkasi di Kantor Kepala Desa Patemon untuk itu...</h5>
     </ion-card-content>
   </ion-card>
 
@@ -90,7 +76,7 @@
 
 <!-- fab placed to the bottom end -->
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button class="tabs-color">
+  <ion-fab-button class="tabs-color" routerLink="/chat">
     <ion-icon name="chatbubbles"></ion-icon>
   </ion-fab-button>
 </ion-fab>

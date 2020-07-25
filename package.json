@@ -26,6 +26,7 @@
     "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-4.10.6.tgz",
     "cordova-android": "8.1.0",
     "cordova-plugin-splashscreen": "^5.0.2",
+    "ngx-autosize": "^1.8.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
